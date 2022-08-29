@@ -33,3 +33,29 @@ void insert(Node **queue, int value)
         printf("Error. Insuficient space");
     }
 }
+
+
+Node* rem(Node **fila)
+{
+        // remove item
+        if(*fila)
+        {
+            Node *first = *fila;
+            while(first->next){
+                *fila = (Node *) first->next;
+            }
+        }else{
+            printf("Empty queue");
+        }
+    return *fila;
+}
+
+
+void print(Node **queue)
+{
+    // print queue
+    Node *pointer_to_init = *queue;
+    while (pointer_to_init->next){
+        printf("%d ", pointer_to_init->value);
+    }
+}
